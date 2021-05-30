@@ -31,9 +31,6 @@ const justiceScale = document.querySelector('.justice-scale');
 
 const token = config.SECRET_KEY;
 
-console.log(token)
-
-
 const baseurl = "https://api.github.com/graphql";
 
 const headers = {
@@ -95,7 +92,6 @@ const dataController = async (userName) => {
      }).catch(error => console.log(JSON.stringify(error)))
 
   let { data } = await result.json()
-  console.log(data)
   const profile = data.user;
   localStorage.setItem('search', JSON.stringify(profile));
   window.location.href = "profile.html"
